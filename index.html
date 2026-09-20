@@ -73,18 +73,6 @@
 
             <a href="#home" class="logo">
 
-                <!--
-                    Put your logo here:
-
-                    images/healthhome.png
-
-                    Rename your uploaded logo to:
-                    healthhome.png
-
-                    and put it inside:
-                    images/
-                -->
-
                 <img src="healthhome.png"
                     alt="HealthHome Logo"
                     class="logo-image">
@@ -285,13 +273,6 @@
 
                     <div class="hero-circle hero-circle-two"></div>
 
-
-                    <!--
-                        Add your app mockup image here.
-
-                        Recommended file:
-                        images/app-mockup.png
-                    -->
 
                     <img src="app-mockup.png"
                         alt="HealthHome Mobile Application"
@@ -546,14 +527,6 @@
                 <div class="family-image-container">
 
                     <div class="family-image-bg"></div>
-
-
-                    <!--
-                        Add family image here.
-
-                        File:
-                        family-healthcare.png
-                    -->
 
                     <img src="family-healthcare.png"
                         alt="Family using HealthHome healthcare services"
@@ -971,17 +944,6 @@
                     </p>
 
 
-                    <!--
-                        IMPORTANT:
-
-                        Replace the # below with your
-                        REAL GOOGLE PLAY STORE URL.
-
-                        Example:
-
-                        https://play.google.com/store/apps/details?id=YOUR_APP_ID
-                    -->
-
                     <a href="#"
                         class="google-play-btn"
                         id="googlePlayButton"
@@ -1011,13 +973,6 @@
                 <!-- Download Image -->
 
                 <div class="download-image-container">
-
-                    <!--
-                        Add app screenshot image here.
-
-                        File:
-                        app-screens.png
-                    -->
 
                     <img src="app-screens.png"
                         alt="HealthHome App Screens"
@@ -1652,7 +1607,7 @@
                     <a href="#home"
                         class="footer-logo">
 
-                        <img src="healthhome-logo.png"
+                        <img src="healthhome.png"
                             alt="HealthHome Logo">
 
                         <span>
@@ -1743,11 +1698,6 @@
                     </p>
 
 
-                    <!--
-                        Replace # with your
-                        Google Play URL.
-                    -->
-
                     <a href="#"
                         id="footerGooglePlay"
                         class="footer-play-btn"
@@ -1803,7 +1753,31 @@
 
 
     <!-- =========================================================
-         JAVASCRIPT FILE
+         PART 13 — EMAILJS + JAVASCRIPT
+         ========================================================= -->
+
+    <!-- EmailJS Browser SDK -->
+    <script
+        type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+
+
+    <!-- =========================================================
+         EMAILJS INITIALIZATION
+         ========================================================= -->
+
+    <script>
+
+        emailjs.init({
+            publicKey: "CPgfP2bQ9nXndHcc6"
+        });
+
+    </script>
+
+
+    <!-- =========================================================
+         HEALTHHOME WEBSITE JAVASCRIPT
          ========================================================= -->
 
     <script src="script.js"></script>
