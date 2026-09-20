@@ -1172,54 +1172,37 @@ section {
    ========================================================= */
 
 .family-section {
-
     padding: 100px 0;
-
     background: var(--section-light);
-
 }
 
 
 /* Family container */
 
 .family-container {
-
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     align-items: center;
-
     gap: 75px;
-
 }
 
 
-/* Family image */
+/* Family image container */
 
 .family-image-container {
-
     position: relative;
-
-    min-height: 430px;
-
+    min-height: auto;
     display: flex;
-
     align-items: center;
-
     justify-content: center;
-
 }
 
 
 /* Background decoration */
 
 .family-image-bg {
-
     position: absolute;
-
     width: 80%;
-
     height: 80%;
 
     background: linear-gradient(
@@ -1229,172 +1212,138 @@ section {
     );
 
     border-radius: 40% 60% 55% 45%;
-
     transform: rotate(-5deg);
-
 }
 
 
-/* Family image */
+/* =========================================================
+   FAMILY IMAGE — COMPLETE IMAGE / NO CROPPING
+   ========================================================= */
 
 .family-image {
-
     position: relative;
-
     z-index: 2;
 
     width: 88%;
+    max-width: 100%;
 
-    height: 400px;
+    /*
+       IMPORTANT:
+       Do NOT use a fixed height.
+       The original image ratio will be preserved.
+    */
+    height: auto;
 
-    object-fit: cover;
+    /*
+       Show the complete image instead of cropping it.
+    */
+    object-fit: contain;
+
+    display: block;
 
     border-radius: 30px;
-
     box-shadow: var(--shadow-medium);
-
 }
 
 
 /* Family content */
 
 .family-content {
-
     max-width: 550px;
-
 }
 
 
 /* Family title */
 
 .family-content h2 {
-
     color: var(--dark);
-
     font-size: clamp(32px, 4vw, 46px);
-
     line-height: 1.15;
-
     font-weight: 800;
-
     margin-bottom: 20px;
-
 }
 
 
 .family-content h2 span {
-
     color: var(--primary-dark);
-
 }
 
 
 /* Family paragraph */
 
 .family-content > p:not(.section-label) {
-
     color: var(--text-light);
-
     font-size: 15px;
-
     line-height: 1.8;
-
     margin-bottom: 25px;
-
 }
 
 
 /* Family features */
 
 .family-features {
-
     display: flex;
-
     flex-direction: column;
-
     gap: 13px;
-
     margin-bottom: 28px;
-
 }
 
 
 /* Family feature */
 
 .family-feature {
-
     display: flex;
-
     align-items: center;
-
     gap: 12px;
 
     color: var(--dark-blue);
 
     font-size: 13px;
-
     font-weight: 500;
-
 }
 
 
 /* Feature check */
 
 .family-feature i {
-
     width: 24px;
-
     height: 24px;
 
     border-radius: 50%;
 
     display: flex;
-
     align-items: center;
-
     justify-content: center;
 
     background: var(--green-light);
-
     color: var(--green);
 
     font-size: 11px;
-
 }
 
 
 /* Text button */
 
 .text-btn {
-
     display: inline-flex;
-
     align-items: center;
-
     gap: 8px;
 
     color: var(--primary-dark);
 
     font-size: 13px;
-
     font-weight: 700;
-
 }
 
 
 .text-btn i {
-
     transition: transform 0.3s ease;
-
 }
 
 
 .text-btn:hover i {
-
     transform: translateX(5px);
-
 }
-
 
 /* =========================================================
    PART 7 — WHY HEALTHHOME
@@ -3315,58 +3264,178 @@ section {
     }
 
 
-    /* =====================================================
-       MOBILE FAMILY
-       ===================================================== */
+/* =====================================================
+   MOBILE FAMILY — COMPLETE IMAGE
+   ===================================================== */
 
-    .family-section {
-
-        padding: 75px 0;
-
-    }
+.family-section {
+    padding: 75px 0;
+}
 
 
-    .family-container {
+.family-container {
+    grid-template-columns: 1fr;
+    gap: 45px;
 
-        grid-template-columns: 1fr;
+    width: 90%;
+    max-width: 100%;
 
-        gap: 45px;
-
-    }
-
-
-    .family-image-container {
-
-        min-height: 330px;
-
-    }
+    margin: 0 auto;
+}
 
 
-    .family-image {
+/* Family image container */
 
-        height: 320px;
+.family-image-container {
+    position: relative;
 
-        width: 90%;
+    width: 100%;
+    min-height: auto;
+    height: auto;
 
-    }
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    overflow: visible;
+}
 
 
-    .family-content {
+/* Decorative background */
 
-        text-align: center;
+.family-image-bg {
+    position: absolute;
 
-    }
+    width: 85%;
+    height: 85%;
+
+    z-index: 0;
+}
 
 
-    .family-features {
+/* =====================================================
+   FAMILY IMAGE — NO CROPPING ON MOBILE
+   ===================================================== */
 
-        align-items: flex-start;
+.family-image {
+    position: relative;
+    z-index: 2;
 
-        display: inline-flex;
+    width: 100%;
+    max-width: 100%;
 
-        text-align: left;
+    height: auto;
 
-    }
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 25px;
+
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* Family content */
+
+.family-content {
+    width: 100%;
+    max-width: 100%;
+
+    text-align: center;
+}
+
+
+.family-content h2 {
+    font-size: 32px;
+    line-height: 1.2;
+}
+
+
+.family-content > p:not(.section-label) {
+    font-size: 14px;
+    line-height: 1.7;
+}
+
+
+/* Family features */
+
+.family-features {
+    align-items: flex-start;
+    display: inline-flex;
+    text-align: left;
+}
+
+/* =====================================================
+   FAMILY IMAGE — SHOW COMPLETE IMAGE
+   ===================================================== */
+
+.family-image {
+    position: relative;
+    z-index: 2;
+
+    width: 88%;
+    max-width: 100%;
+
+    /* IMPORTANT: don't force a fixed height */
+    height: auto;
+
+    /* Show the complete image */
+    object-fit: contain;
+
+    display: block;
+
+    border-radius: 30px;
+    box-shadow: var(--shadow-medium);
+}
+
+
+/* Family content */
+
+.family-content {
+
+    width: 100%;
+
+    max-width: 100%;
+
+    text-align: center;
+
+}
+
+
+.family-content h2 {
+
+    font-size: 32px;
+
+    line-height: 1.2;
+
+}
+
+
+.family-content > p:not(.section-label) {
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
+}
+
+
+/* Family features */
+
+.family-features {
+
+    align-items: flex-start;
+
+    display: inline-flex;
+
+    text-align: left;
+
+}
+
+
+
+   
 
 
     /* =====================================================
@@ -3821,4 +3890,129 @@ textarea:focus-visible {
 
     }
 
+}
+
+/* =========================================================
+   PART 20 — FINAL RESPONSIVE IMAGE FIX
+   ========================================================= */
+
+html,
+body {
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* Prevent containers from creating horizontal overflow */
+
+.hero-container,
+.family-container,
+.download-container,
+.contact-container,
+.final-cta-container {
+    min-width: 0;
+    max-width: 100%;
+}
+
+
+/* All images remain inside their container */
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* =========================================================
+   FAMILY IMAGE — DESKTOP
+   ========================================================= */
+
+.family-image {
+    width: 88%;
+    max-width: 100%;
+    height: auto;
+
+    object-fit: contain;
+
+    display: block;
+}
+
+
+/* =========================================================
+   FAMILY IMAGE — TABLET
+   ========================================================= */
+
+@media (max-width: 1000px) {
+
+    .family-image-container {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+    }
+
+    .family-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+
+        object-fit: contain;
+    }
+}
+
+
+/* =========================================================
+   FAMILY IMAGE — MOBILE
+   ========================================================= */
+
+@media (max-width: 768px) {
+
+    .family-image-container {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+
+        overflow: visible;
+    }
+
+    .family-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+
+        object-fit: contain;
+
+        border-radius: 25px;
+    }
+}
+
+
+/* =========================================================
+   FAMILY IMAGE — SMALL PHONES
+   ========================================================= */
+
+@media (max-width: 480px) {
+
+    .family-image-container {
+        width: 100%;
+        min-height: auto;
+        height: auto;
+
+        padding: 0;
+    }
+
+    .family-image {
+        width: 100%;
+        max-width: 100%;
+        height: auto;
+
+        object-fit: contain;
+
+        border-radius: 22px;
+    }
+
+    .family-image-bg {
+        width: 80%;
+        height: 80%;
+    }
 }
