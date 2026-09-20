@@ -465,162 +465,267 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
 
-    /* =====================================================
-       PART 10 — CONTACT FORM
-       ===================================================== */
+   /* =====================================================
+   PART 10 — EMAILJS CONTACT FORM
+   ===================================================== */
 
-    /*
-        IMPORTANT:
+/*
+    Contact form flow:
 
-        This is currently a FRONT-END form.
-
-        It does not automatically send an email.
-
-        For now, JavaScript:
-        - checks the form
-        - shows a success message
-        - clears the form
-
-        Later we can connect it to:
-        - EmailJS
-        - Formspree
-        - your Node.js backend
-        - another form service
-    */
+    Website
+        ↓
+    EmailJS
+        ↓
+    Gmail Service
+        ↓
+    sanvichaudhary311@gmail.com
+*/
 
 
-    if (contactForm) {
+if (contactForm) {
 
-        contactForm.addEventListener(
-            "submit",
-            function (event) {
+    contactForm.addEventListener(
+        "submit",
+        function (event) {
 
-                /* Stop normal page refresh */
+            /* -----------------------------------------
+               STOP NORMAL FORM SUBMISSION
+               ----------------------------------------- */
 
-                event.preventDefault();
-
-
-                /* Get form values */
-
-                const name =
-                    document.getElementById("name").value.trim();
-
-                const email =
-                    document.getElementById("email").value.trim();
-
-                const phone =
-                    document.getElementById("phone").value.trim();
-
-                const message =
-                    document.getElementById("message").value.trim();
+            event.preventDefault();
 
 
-                /* Basic validation */
+            /* -----------------------------------------
+               GET FORM VALUES
+               ----------------------------------------- */
 
-                if (
-                    name === "" ||
-                    email === "" ||
-                    message === ""
-                ) {
+            const name =
+                document.getElementById("name").value.trim();
 
-                    if (formMessage) {
+            const email =
+                document.getElementById("email").value.trim();
 
-                        formMessage.textContent =
-                            "Please fill in all required fields.";
+            const phone =
+                document.getElementById("phone").value.trim();
 
-                        formMessage.style.color =
-                            "#DC2626";
-
-                    }
-
-                    return;
-
-                }
+            const message =
+                document.getElementById("message").value.trim();
 
 
-                /* Basic email validation */
+            /* -----------------------------------------
+               BASIC VALIDATION
+               ----------------------------------------- */
 
-                const emailPattern =
-                    /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-
-
-                if (!emailPattern.test(email)) {
-
-                    if (formMessage) {
-
-                        formMessage.textContent =
-                            "Please enter a valid email address.";
-
-                        formMessage.style.color =
-                            "#DC2626";
-
-                    }
-
-                    return;
-
-                }
-
-
-                /*
-                    At this point the form is valid.
-                */
-
+            if (
+                name === "" ||
+                email === "" ||
+                message === ""
+            ) {
 
                 if (formMessage) {
 
                     formMessage.textContent =
-                        "Thank you! Your message has been received.";
+                        "Please fill in all required fields.";
 
                     formMessage.style.color =
-                        "#24B47E";
+                        "#DC2626";
 
                 }
 
+                return;
+            }
 
-                /*
-                    Console output for development.
 
-                    You can see the submitted information
-                    in browser:
+            /* -----------------------------------------
+               EMAIL VALIDATION
+               ----------------------------------------- */
 
-                    Right click → Inspect → Console
-                */
+            const emailPattern =
+                /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
-                console.log(
-                    "HealthHome Contact Form",
-                    {
-                        name: name,
-                        email: email,
-                        phone: phone,
-                        message: message
-                    }
+
+            if (!emailPattern.test(email)) {
+
+                if (formMessage) {
+
+                    formMessage.textContent =
+                        "Please enter a valid email address.";
+
+                    formMessage.style.color =
+                        "#DC2626";
+
+                }
+
+                return;
+            }
+
+
+            /* -----------------------------------------
+               SHOW SENDING MESSAGE
+               ----------------------------------------- */
+
+            if (formMessage) {
+
+                formMessage.textContent =
+                    "Sending your message...";
+
+                formMessage.style.color =
+                    "#0879D9";
+
+            }
+
+
+            /* -----------------------------------------
+               DISABLE BUTTON WHILE SENDING
+               ----------------------------------------- */
+
+            const submitButton =
+                contactForm.querySelector(
+                    ".submit-btn"
                 );
 
 
-                /* Clear form */
+            const originalButtonText =
+                submitButton
+                    ? submitButton.innerHTML
+                    : "";
 
-                contactForm.reset();
+
+            if (submitButton) {
+
+                submitButton.disabled = true;
+
+                submitButton.style.opacity = "0.7";
+
+                submitButton.innerHTML =
+                    `
+                    <span>Sending...</span>
+                    <i class="fa-solid fa-spinner fa-spin"></i>
+                    `;
+            }
 
 
-                /*
-                    Remove success message after 5 seconds.
-                */
+            /* -----------------------------------------
+               SEND EMAIL THROUGH EMAILJS
+               ----------------------------------------- */
 
-                setTimeout(function () {
+            emailjs.sendForm(
+                "service_ebaclvk",
+                "template_r8t32dj",
+                contactForm
+            )
+
+            .then(
+                function (response) {
+
+                    console.log(
+                        "EMAILJS SUCCESS:",
+                        response.status,
+                        response.text
+                    );
+
+
+                    /* ---------------------------------
+                       SUCCESS MESSAGE
+                       --------------------------------- */
 
                     if (formMessage) {
 
-                        formMessage.textContent = "";
+                        formMessage.textContent =
+                            "Thank you! Your message has been sent successfully.";
+
+                        formMessage.style.color =
+                            "#24B47E";
 
                     }
 
-                }, 5000);
 
-            }
-        );
+                    /* ---------------------------------
+                       RESET FORM
+                       --------------------------------- */
 
-    }
+                    contactForm.reset();
 
+
+                    /* ---------------------------------
+                       RESTORE BUTTON
+                       --------------------------------- */
+
+                    if (submitButton) {
+
+                        submitButton.disabled = false;
+
+                        submitButton.style.opacity = "1";
+
+                        submitButton.innerHTML =
+                            originalButtonText;
+
+                    }
+
+
+                    /* ---------------------------------
+                       REMOVE MESSAGE AFTER 5 SECONDS
+                       --------------------------------- */
+
+                    setTimeout(function () {
+
+                        if (formMessage) {
+
+                            formMessage.textContent = "";
+
+                        }
+
+                    }, 5000);
+
+                }
+            )
+
+            .catch(
+                function (error) {
+
+                    console.error(
+                        "EMAILJS ERROR:",
+                        error
+                    );
+
+
+                    /* ---------------------------------
+                       ERROR MESSAGE
+                       --------------------------------- */
+
+                    if (formMessage) {
+
+                        formMessage.textContent =
+                            "Sorry, your message could not be sent. Please try again.";
+
+                        formMessage.style.color =
+                            "#DC2626";
+
+                    }
+
+
+                    /* ---------------------------------
+                       RESTORE BUTTON
+                       --------------------------------- */
+
+                    if (submitButton) {
+
+                        submitButton.disabled = false;
+
+                        submitButton.style.opacity = "1";
+
+                        submitButton.innerHTML =
+                            originalButtonText;
+
+                    }
+
+                }
+            );
+
+        }
+    );
+
+}
 
 
     /* =====================================================
