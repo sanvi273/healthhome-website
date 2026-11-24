@@ -118,21 +118,21 @@
                         <p class="card-overline">For patients</p>
                         <h3>Doctor Consultation</h3>
                         <p>Explore doctor options and follow the appointment flow available in HealthHome.</p>
-                        <a href="doctors.html" class="text-link">Explore doctor services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="doctors.html#patient-experience" class="text-link">Explore doctor services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                     </article>
                     <article class="service-card service-card-teal">
                         <div class="service-icon"><i class="fa-solid fa-pills" aria-hidden="true"></i></div>
                         <p class="card-overline">For patients</p>
                         <h3>Medicine Delivery</h3>
                         <p>Browse medicine options and return to the order information shown in the app.</p>
-                        <a href="medicine-delivery.html" class="text-link">Explore medicine services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="medicine-delivery.html#patient-experience" class="text-link">Explore medicine services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                     </article>
                     <article class="service-card service-card-purple">
                         <div class="service-icon"><i class="fa-solid fa-flask-vial" aria-hidden="true"></i></div>
                         <p class="card-overline">For patients</p>
                         <h3>Home Lab Tests</h3>
                         <p>Check home test options and use the app’s Lab Reports area for available reports.</p>
-                        <a href="home-lab-tests.html" class="text-link">Explore lab services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                        <a href="home-lab-tests.html#patient-experience" class="text-link">Explore lab services <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                     </article>
                     <article class="service-card service-card-orange">
                         <div class="service-icon"><i class="fa-solid fa-folder-open" aria-hidden="true"></i></div>
@@ -149,11 +149,30 @@
         <section class="section patient-section" id="patients" aria-labelledby="patients-title">
             <div class="container audience-layout">
                 <div class="audience-visual">
-                    <picture>
-                        <source srcset="images/healthhome-app-screen.webp" type="image/webp">
-                        <img src="images/healthhome-app-screen.png" alt="HealthHome app screen with doctor, medicine and lab services plus appointment and report shortcuts" width="730" height="1355" loading="lazy" decoding="async">
-                    </picture>
-                    <div class="audience-visual-caption"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><span>One app for everyday healthcare</span></div>
+                    <div class="patient-app-gallery" aria-label="Patient app screen previews">
+                        <figure class="patient-app-preview">
+                            <picture>
+                                <source srcset="images/healthhome-app-screen.webp" type="image/webp">
+                                <img src="images/healthhome-app-screen.png" alt="Patient HealthHome home screen with doctor consultation, lab tests and medicine delivery" width="730" height="1355" loading="lazy" decoding="async">
+                            </picture>
+                            <figcaption>HealthHome</figcaption>
+                        </figure>
+                        <figure class="patient-app-preview">
+                            <picture>
+                                <source srcset="images/lab-app-screen.webp" type="image/webp">
+                                <img src="images/lab-app-screen.png" alt="Patient Lab Tests screen with test booking and prescription upload options" width="738" height="1600" loading="lazy" decoding="async">
+                            </picture>
+                            <figcaption>Lab Tests</figcaption>
+                        </figure>
+                        <figure class="patient-app-preview">
+                            <picture>
+                                <source srcset="images/pharmacy-app-screen.webp" type="image/webp">
+                                <img src="images/pharmacy-app-screen.png" alt="Patient Pharmacy screen with medicine delivery, prescription upload and order tracking" width="738" height="1600" loading="lazy" decoding="async">
+                            </picture>
+                            <figcaption>Pharmacy</figcaption>
+                        </figure>
+                    </div>
+                    <div class="audience-visual-caption"><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i><span>Patient app screens for everyday healthcare</span></div>
                 </div>
                 <div class="audience-copy">
                     <p class="section-kicker">For Patients</p>
@@ -206,13 +225,14 @@
                     <p class="section-kicker">For Doctors</p>
                     <h2 id="doctors-title">Empowering doctors with <span>connected care.</span></h2>
                     <p class="section-lead">HealthHome’s patient experience includes doctor consultation and appointment areas. Providers interested in joining can speak with our team about the current consultation and appointment workflow.</p>
-                    <a href="#contact" class="text-link">Ask about provider onboarding <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="doctors.html" class="text-link">Explore doctor dashboard <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#contact" class="text-link provider-secondary-link">Ask about provider onboarding <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="sector-workflow">
                     <figure class="dashboard-preview">
                         <picture>
                             <source srcset="images/doctor-dashboard.webp" type="image/webp">
-                            <img src="images/doctor-dashboard.png" alt="Doctor dashboard preview showing completed cases, online status, reschedule requests and pending appointments" width="720" height="710" loading="lazy" decoding="async">
+                            <img src="images/doctor-dashboard.png" alt="Doctor dashboard preview showing completed cases, online status, reschedule requests and pending appointments" width="720" height="700" loading="lazy" decoding="async">
                         </picture>
                         <figcaption><strong>Doctor dashboard</strong><span>Appointments and reschedule requests</span></figcaption>
                     </figure>
@@ -234,7 +254,8 @@
                     <p class="section-kicker">For Pharmacies</p>
                     <h2 id="pharmacies-title">Medicine access with <span>local partners.</span></h2>
                     <p class="section-lead">The HealthHome app includes medicine browsing and order areas. Pharmacies can contact us to discuss catalogue, service-area and order-fulfilment requirements.</p>
-                    <a href="#contact" class="text-link">Ask about pharmacy partnerships <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="medicine-delivery.html" class="text-link">Explore pharmacy dashboard <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#contact" class="text-link provider-secondary-link">Ask about pharmacy partnerships <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="sector-workflow">
                     <figure class="dashboard-preview">
@@ -262,13 +283,14 @@
                     <p class="section-kicker">For Laboratories</p>
                     <h2 id="laboratories-title">Lab bookings and reports, <span>connected.</span></h2>
                     <p class="section-lead">Patients can explore home lab tests and the Lab Reports area in HealthHome. Laboratories can contact our team to discuss test listings, booking and report workflows.</p>
-                    <a href="#contact" class="text-link">Ask about laboratory partnerships <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="home-lab-tests.html" class="text-link">Explore laboratory dashboard <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
+                    <a href="#contact" class="text-link provider-secondary-link">Ask about laboratory partnerships <i class="fa-solid fa-arrow-right" aria-hidden="true"></i></a>
                 </div>
                 <div class="sector-workflow">
                     <figure class="dashboard-preview">
                         <picture>
                             <source srcset="images/lab-dashboard.webp" type="image/webp">
-                            <img src="images/lab-dashboard.png" alt="Laboratory dashboard preview showing test management, reschedule requests and new lab bookings" width="720" height="560" loading="lazy" decoding="async">
+                            <img src="images/lab-dashboard.png" alt="Laboratory dashboard preview showing test management, reschedule requests and new lab bookings" width="720" height="540" loading="lazy" decoding="async">
                         </picture>
                         <figcaption><strong>Laboratory dashboard</strong><span>Test management and booking requests</span></figcaption>
                     </figure>

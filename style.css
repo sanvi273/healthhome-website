@@ -673,6 +673,47 @@ summary:focus-visible {
     object-fit: contain;
 }
 
+.patient-app-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    align-items: end;
+    gap: 12px;
+}
+
+.patient-app-preview {
+    overflow: hidden;
+    min-width: 0;
+    margin: 0;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    background: #F3F7FA;
+}
+
+.patient-app-preview picture {
+    min-height: 0;
+    padding: 8px 6px 0;
+}
+
+.audience-visual .patient-app-preview img {
+    display: block;
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 380px;
+    border-radius: 8px 8px 0 0;
+    object-fit: contain;
+}
+
+.patient-app-preview figcaption {
+    padding: 9px 6px;
+    border-top: 1px solid var(--border);
+    background: var(--white);
+    color: var(--dark-blue);
+    font-size: 11px;
+    font-weight: 750;
+    text-align: center;
+}
+
 .audience-visual-caption {
     display: flex;
     align-items: center;
@@ -847,6 +888,16 @@ summary:focus-visible {
 
 .sector-copy .section-lead {
     margin-bottom: 19px;
+}
+
+.sector-copy .text-link {
+    display: flex;
+    width: fit-content;
+    margin-top: 11px;
+}
+
+.sector-copy .provider-secondary-link {
+    color: var(--text-light);
 }
 
 .sector-workflow {
@@ -1625,6 +1676,8 @@ body.has-reveal .reveal.is-visible { opacity: 1; transform: translateY(0); }
     .service-highlights { grid-template-columns: 1fr; }
     .service-section { padding: 56px 0; }
     .service-cta .button,.service-cta .primary-btn { width: 100%; }
+    .patient-app-gallery { gap: 8px; }
+    .audience-visual .patient-app-preview img { max-height: 300px; }
 }
 
 @media (max-width: 380px) {
