@@ -49,10 +49,18 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     const navSections = navLinks
-        .map((link) => document.querySelector(link.getAttribute("href")))
+        .map((link) => {
+            const href = link.getAttribute("href");
+            return href?.startsWith("#") ? document.querySelector(href) : null;
+        })
         .filter(Boolean);
 
     const updateNavigation = () => {
+        if (!navSections.length) {
+            navbar?.classList.toggle("scrolled", window.scrollY > 30);
+            return;
+        }
+
         const scrollMarker = window.scrollY + (navbar?.offsetHeight ?? 0) + 120;
         let currentSection = navSections[0];
 
