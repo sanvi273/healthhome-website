@@ -5,8 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const navLinks = [...document.querySelectorAll(".nav-link")];
     const currentYear = document.getElementById("currentYear");
     const contactForm = document.getElementById("contactForm");
-    const formMessage = document.getElementById("formMessage");
-    const contactEmail = "healthhome2003@gmail.com";
+    const formStatus = document.getElementById("formStatus");
 
     const setMenuOpen = (isOpen) => {
         if (!menuButton || !navMenu) return;
@@ -19,10 +18,8 @@ document.addEventListener("DOMContentLoaded", () => {
         );
 
         const icon = menuButton.querySelector("i");
-        if (icon) {
-            icon.classList.toggle("fa-xmark", isOpen);
-            icon.classList.toggle("fa-bars", !isOpen);
-        }
+        icon?.classList.toggle("fa-xmark", isOpen);
+        icon?.classList.toggle("fa-bars", !isOpen);
     };
 
     menuButton?.addEventListener("click", () => {
@@ -44,22 +41,22 @@ document.addEventListener("DOMContentLoaded", () => {
         if (navbar && !navbar.contains(event.target)) setMenuOpen(false);
     });
 
-    window.addEventListener("resize", () => {
-        if (window.innerWidth > 768) setMenuOpen(false);
+    const mobileMenuQuery = window.matchMedia("(max-width: 1100px)");
+    mobileMenuQuery.addEventListener?.("change", (event) => {
+        if (!event.matches) setMenuOpen(false);
     });
 
     const navSections = navLinks
         .map((link) => {
             const href = link.getAttribute("href");
-            return href?.startsWith("#") ? document.querySelector(href) : null;
+            if (!href?.startsWith("#")) return null;
+            return document.getElementById(href.slice(1));
         })
         .filter(Boolean);
 
     const updateNavigation = () => {
-        if (!navSections.length) {
-            navbar?.classList.toggle("scrolled", window.scrollY > 30);
-            return;
-        }
+        navbar?.classList.toggle("scrolled", window.scrollY > 30);
+        if (!navSections.length) return;
 
         const scrollMarker = window.scrollY + (navbar?.offsetHeight ?? 0) + 120;
         let currentSection = navSections[0];
@@ -69,17 +66,14 @@ document.addEventListener("DOMContentLoaded", () => {
         });
 
         navLinks.forEach((link) => {
-            const isCurrent = link.getAttribute("href") === `#${currentSection?.id}`;
+            const isCurrent = link.getAttribute("href") === `#${currentSection.id}`;
             link.classList.toggle("active", isCurrent);
-
             if (isCurrent) {
                 link.setAttribute("aria-current", "location");
             } else {
                 link.removeAttribute("aria-current");
             }
         });
-
-        navbar?.classList.toggle("scrolled", window.scrollY > 30);
     };
 
     let scrollFrame = 0;
@@ -96,40 +90,6 @@ document.addEventListener("DOMContentLoaded", () => {
     );
     updateNavigation();
 
-    const animatedElements = document.querySelectorAll(
-        ".service-card, .why-card, .step-card, .building-card, .approach-card, " +
-        ".contact-item, .family-content, .family-image-container"
-    );
-
-    if (
-        animatedElements.length &&
-        "IntersectionObserver" in window &&
-        !window.matchMedia("(prefers-reduced-motion: reduce)").matches
-    ) {
-        document.body.classList.add("has-reveal");
-
-        const revealObserver = new IntersectionObserver(
-            (entries, observer) => {
-                entries.forEach((entry) => {
-                    if (!entry.isIntersecting) return;
-                    entry.target.classList.add("visible");
-                    observer.unobserve(entry.target);
-                });
-            },
-            { threshold: 0.12 }
-        );
-
-        animatedElements.forEach((element) => revealObserver.observe(element));
-
-        [".service-card", ".why-card", ".step-card", ".building-card", ".approach-card"].forEach(
-            (selector) => {
-                document.querySelectorAll(selector).forEach((card, index) => {
-                    card.style.setProperty("--reveal-delay", `${index * 70}ms`);
-                });
-            }
-        );
-    }
-
     contactForm?.addEventListener("submit", (event) => {
         event.preventDefault();
 
@@ -137,32 +97,35 @@ document.addEventListener("DOMContentLoaded", () => {
         const name = String(fields.get("name") ?? "").trim();
         const email = String(fields.get("email") ?? "").trim();
         const phone = String(fields.get("phone") ?? "").trim();
+        const subject = String(fields.get("subject") ?? "").trim();
         const message = String(fields.get("message") ?? "").trim();
 
-        if (!name || !email || !message) {
-            if (formMessage) {
-                formMessage.classList.add("is-error");
-                formMessage.textContent = "Please complete your name, email and message.";
+        if (!name || !email || !subject || !message) {
+            if (formStatus) {
+                formStatus.classList.add("is-error");
+                formStatus.textContent = "Please complete your name, email, topic and message.";
             }
             return;
         }
 
+        const contactEmail = document.body.dataset.contactEmail || "healthhome2003@gmail.com";
         const body = [
             `Name: ${name}`,
             `Email: ${email}`,
             phone ? `Phone: ${phone}` : "",
+            `Topic: ${subject}`,
             "",
             message
         ].filter((line) => line !== "").join("\n");
 
-        if (formMessage) {
-            formMessage.classList.remove("is-error");
-            formMessage.textContent = "Your email app will open so you can review and send your message.";
+        if (formStatus) {
+            formStatus.classList.remove("is-error");
+            formStatus.textContent = "Your email app will open so you can review and send your message.";
         }
 
-        const subject = encodeURIComponent("HealthHome website enquiry");
-        const encodedBody = encodeURIComponent(body);
-        window.location.href = `mailto:${contactEmail}?subject=${subject}&body=${encodedBody}`;
+        const mailtoSubject = encodeURIComponent(`HealthHome enquiry: ${subject}`);
+        const mailtoBody = encodeURIComponent(body);
+        window.location.href = `mailto:${contactEmail}?subject=${mailtoSubject}&body=${mailtoBody}`;
     });
 
     if (currentYear) currentYear.textContent = String(new Date().getFullYear());
