@@ -673,45 +673,14 @@ summary:focus-visible {
     object-fit: contain;
 }
 
-.patient-app-gallery {
-    display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    align-items: end;
-    gap: 12px;
-}
-
-.patient-app-preview {
-    overflow: hidden;
-    min-width: 0;
-    margin: 0;
-    border: 1px solid var(--border);
-    border-radius: 14px;
-    background: #F3F7FA;
-}
-
-.patient-app-preview picture {
-    min-height: 0;
-    padding: 8px 6px 0;
-}
-
-.audience-visual .patient-app-preview img {
+.audience-visual .patient-module-image {
     display: block;
-    width: auto;
+    width: 100%;
     height: auto;
     max-width: 100%;
-    max-height: 380px;
-    border-radius: 8px 8px 0 0;
+    max-height: 520px;
+    border-radius: 16px;
     object-fit: contain;
-}
-
-.patient-app-preview figcaption {
-    padding: 9px 6px;
-    border-top: 1px solid var(--border);
-    background: var(--white);
-    color: var(--dark-blue);
-    font-size: 11px;
-    font-weight: 750;
-    text-align: center;
 }
 
 .audience-visual-caption {
@@ -928,7 +897,7 @@ summary:focus-visible {
     width: auto;
     height: auto;
     max-width: 100%;
-    max-height: 320px;
+    max-height: min(74vh, 600px);
     object-fit: contain;
 }
 
@@ -1654,6 +1623,7 @@ body.has-reveal .reveal.is-visible { opacity: 1; transform: translateY(0); }
     .journey-card { min-height: unset; }
     .provider-intro-section { padding: 58px 0; }
     .sector-workflow { padding: 21px 17px; }
+    .dashboard-preview img { max-height: min(64vh, 500px); }
     .ecosystem-hub-wrap { padding-bottom: 22px; }
     .ecosystem-hub-wrap::after { height: 22px; }
     .ecosystem-provider-grid { grid-template-columns: 1fr; gap: 12px; padding: 0 0 0 20px; }
@@ -1676,8 +1646,6 @@ body.has-reveal .reveal.is-visible { opacity: 1; transform: translateY(0); }
     .service-highlights { grid-template-columns: 1fr; }
     .service-section { padding: 56px 0; }
     .service-cta .button,.service-cta .primary-btn { width: 100%; }
-    .patient-app-gallery { gap: 8px; }
-    .audience-visual .patient-app-preview img { max-height: 300px; }
 }
 
 @media (max-width: 380px) {
