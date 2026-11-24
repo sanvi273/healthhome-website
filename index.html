@@ -2,80 +2,73 @@
 <html lang="en">
 
 <head>
-
-    <!-- =========================================================
-         PART 1 — HEAD / BASIC INFORMATION
-         ========================================================= -->
-
     <meta charset="UTF-8">
-
-    <!-- Makes website responsive on mobile/tablet -->
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <!-- Website title shown in browser -->
-    <title>HealthHome | Healthcare for You. Care for Your Whole Family.</title>
-
-    <!-- Website description for Google/search engines -->
-    <meta name="description"
-        content="HealthHome brings healthcare services together in one simple platform. Connect with doctors, access medicines, book lab tests and manage healthcare for your family.">
-
-    <!-- Keywords -->
-    <meta name="keywords"
-        content="HealthHome, healthcare app, doctor consultation, medicine delivery, home lab tests, family healthcare">
-
-    <!-- Author -->
-    <meta name="author" content="HealthHome">
-
-    <!-- Prevent search engines from showing unwanted content -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#ffffff">
     <meta name="robots" content="index, follow">
+    <meta name="author" content="HealthHome">
+    <meta name="description" content="HealthHome brings doctor consultations, medicines, lab tests and family healthcare together in one simple platform.">
 
-    <!-- =========================================================
-         GOOGLE FONTS
-         ========================================================= -->
+    <title>HealthHome | Healthcare for You and Your Family</title>
+    <link rel="canonical" href="https://healthhome.in/">
+    <link rel="icon" href="images/healthhome.webp" type="image/webp">
+    <link rel="icon" href="images/healthhome.png" type="image/png">
+
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="HealthHome">
+    <meta property="og:url" content="https://healthhome.in/">
+    <meta property="og:title" content="HealthHome | Healthcare for You and Your Family">
+    <meta property="og:description" content="Connect with doctors, access medicines, book lab tests and manage healthcare for your family with HealthHome.">
+    <meta property="og:image" content="https://healthhome.in/images/app-screens.webp">
+    <meta property="og:image:alt" content="HealthHome app screens for healthcare services">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="HealthHome | Healthcare for You and Your Family">
+    <meta name="twitter:description" content="Connect with doctors, access medicines, book lab tests and manage healthcare for your family with HealthHome.">
+    <meta name="twitter:image" content="https://healthhome.in/images/app-screens.webp">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
-
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
-        rel="stylesheet">
-
-    <!-- =========================================================
-         ICON LIBRARY
-         ========================================================= -->
-
-    <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-
-    <!-- =========================================================
-         CONNECT OUR CSS FILE
-         ========================================================= -->
-
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     <link rel="stylesheet" href="style.css">
 
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "HealthHome",
+            "url": "https://healthhome.in/",
+            "logo": "https://healthhome.in/images/healthhome.webp",
+            "email": "healthhome2003@gmail.com",
+            "telephone": "+91 93130 69960",
+            "areaServed": {
+                "@type": "AdministrativeArea",
+                "name": "Gujarat, India"
+            }
+        }
+    </script>
 </head>
-
 
 <body>
 
-
-    <!-- =========================================================
-         PART 2 — NAVIGATION BAR
-         ========================================================= -->
+    <a class="skip-link" href="#main-content">Skip to main content</a>
 
     <header class="navbar" id="navbar">
 
         <div class="container navbar-container">
 
-            <!-- -------------------------
-                 HEALTHHOME LOGO
-                 ------------------------- -->
-
             <a href="#home" class="logo">
 
-                <img src="healthhome.png"
-                    alt="HealthHome Logo"
-                    class="logo-image">
+                <picture>
+                    <source srcset="images/healthhome.webp" type="image/webp">
+                    <img src="images/healthhome.png"
+                        alt=""
+                        class="logo-image"
+                        width="256"
+                        height="256"
+                        decoding="async">
+                </picture>
 
                 <span class="logo-text">
                     Health<span>Home</span>
@@ -83,14 +76,9 @@
 
             </a>
 
+            <nav class="nav-menu" id="navMenu" aria-label="Main navigation">
 
-            <!-- -------------------------
-                 DESKTOP NAVIGATION
-                 ------------------------- -->
-
-            <nav class="nav-menu" id="navMenu">
-
-                <a href="#home" class="nav-link active">
+                <a href="#home" class="nav-link active" aria-current="location">
                     Home
                 </a>
 
@@ -112,15 +100,10 @@
 
             </nav>
 
-
-            <!-- -------------------------
-                 GOOGLE PLAY BUTTON
-                 ------------------------- -->
-
             <a href="#download"
                 class="nav-download-btn">
 
-                <i class="fa-brands fa-google-play"></i>
+                <i aria-hidden="true" class="fa-solid fa-mobile-screen-button"></i>
 
                 <span>
                     Get the App
@@ -128,16 +111,14 @@
 
             </a>
 
-
-            <!-- -------------------------
-                 MOBILE MENU BUTTON
-                 ------------------------- -->
-
             <button class="mobile-menu-btn"
                 id="mobileMenuBtn"
-                aria-label="Open navigation menu">
+                type="button"
+                aria-label="Open navigation menu"
+                aria-controls="navMenu"
+                aria-expanded="false">
 
-                <i class="fa-solid fa-bars"></i>
+                <i class="fa-solid fa-bars" aria-hidden="true"></i>
 
             </button>
 
@@ -145,30 +126,17 @@
 
     </header>
 
-
-
-
-    <!-- =========================================================
-         PART 3 — HERO SECTION
-         ========================================================= -->
-
-    <main>
+        <main id="main-content" tabindex="-1">
 
         <section class="hero-section" id="home">
 
             <div class="container hero-container">
-
-
-                <!-- -------------------------
-                     HERO LEFT CONTENT
-                     ------------------------- -->
 
                 <div class="hero-content">
 
                     <p class="hero-small-title">
                         Your Health. Our Priority.
                     </p>
-
 
                     <h1 class="hero-title">
 
@@ -180,7 +148,6 @@
 
                     </h1>
 
-
                     <p class="hero-description">
 
                         HealthHome brings essential healthcare services
@@ -191,42 +158,35 @@
 
                     </p>
 
-
-                    <!-- HERO BUTTONS -->
-
                     <div class="hero-buttons">
 
                         <a href="#download"
                             class="primary-btn">
 
-                            <i class="fa-brands fa-google-play"></i>
+                            <i aria-hidden="true" class="fa-solid fa-envelope"></i>
 
                             <span>
-                                Download HealthHome
+                                Get the app link
                             </span>
 
                         </a>
-
 
                         <a href="#services"
                             class="secondary-btn">
 
                             Explore Services
 
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                         </a>
 
                     </div>
 
-
-                    <!-- SMALL TRUST INFORMATION -->
-
                     <div class="hero-trust">
 
                         <div class="trust-item">
 
-                            <i class="fa-solid fa-user-doctor"></i>
+                            <i aria-hidden="true" class="fa-solid fa-user-doctor"></i>
 
                             <span>
                                 Doctor Consultation
@@ -234,10 +194,9 @@
 
                         </div>
 
-
                         <div class="trust-item">
 
-                            <i class="fa-solid fa-pills"></i>
+                            <i aria-hidden="true" class="fa-solid fa-pills"></i>
 
                             <span>
                                 Medicine Delivery
@@ -245,10 +204,9 @@
 
                         </div>
 
-
                         <div class="trust-item">
 
-                            <i class="fa-solid fa-flask"></i>
+                            <i aria-hidden="true" class="fa-solid fa-flask"></i>
 
                             <span>
                                 Lab Tests
@@ -260,32 +218,28 @@
 
                 </div>
 
-
-
-                <!-- -------------------------
-                     HERO RIGHT IMAGE
-                     ------------------------- -->
-
                 <div class="hero-image-container">
 
-                    <!-- Decorative background -->
                     <div class="hero-circle hero-circle-one"></div>
 
                     <div class="hero-circle hero-circle-two"></div>
 
-
-                    <img src="app-mockup.png"
-                        alt="HealthHome Mobile Application"
-                        class="hero-app-image">
-
-
-                    <!-- Floating Card 1 -->
+                    <picture>
+                        <source srcset="images/app-mockup.webp" type="image/webp">
+                        <img src="images/app-mockup.png"
+                            alt="Preview of the HealthHome mobile app on a phone screen"
+                            class="hero-app-image"
+                            width="668"
+                            height="972"
+                            fetchpriority="high"
+                            decoding="async">
+                    </picture>
 
                     <div class="floating-card floating-card-one">
 
                         <div class="floating-icon blue-icon">
 
-                            <i class="fa-solid fa-user-doctor"></i>
+                            <i aria-hidden="true" class="fa-solid fa-user-doctor"></i>
 
                         </div>
 
@@ -303,14 +257,11 @@
 
                     </div>
 
-
-                    <!-- Floating Card 2 -->
-
                     <div class="floating-card floating-card-two">
 
                         <div class="floating-icon green-icon">
 
-                            <i class="fa-solid fa-heart-pulse"></i>
+                            <i aria-hidden="true" class="fa-solid fa-heart-pulse"></i>
 
                         </div>
 
@@ -334,19 +285,9 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 4 — CORE SERVICES
-             ========================================================= -->
-
         <section class="services-section" id="services">
 
             <div class="container">
-
-
-                <!-- Section Heading -->
 
                 <div class="section-heading">
 
@@ -365,20 +306,13 @@
 
                 </div>
 
-
-
-                <!-- Service Cards -->
-
                 <div class="services-grid">
-
-
-                    <!-- SERVICE 1 -->
 
                     <article class="service-card">
 
                         <div class="service-icon blue-service">
 
-                            <i class="fa-solid fa-user-doctor"></i>
+                            <i aria-hidden="true" class="fa-solid fa-user-doctor"></i>
 
                         </div>
 
@@ -397,21 +331,17 @@
 
                             Learn More
 
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                         </a>
 
                     </article>
 
-
-
-                    <!-- SERVICE 2 -->
-
                     <article class="service-card">
 
                         <div class="service-icon green-service">
 
-                            <i class="fa-solid fa-pills"></i>
+                            <i aria-hidden="true" class="fa-solid fa-pills"></i>
 
                         </div>
 
@@ -430,21 +360,17 @@
 
                             Learn More
 
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                         </a>
 
                     </article>
 
-
-
-                    <!-- SERVICE 3 -->
-
                     <article class="service-card">
 
                         <div class="service-icon purple-service">
 
-                            <i class="fa-solid fa-flask-vial"></i>
+                            <i aria-hidden="true" class="fa-solid fa-flask-vial"></i>
 
                         </div>
 
@@ -463,21 +389,17 @@
 
                             Learn More
 
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                         </a>
 
                     </article>
 
-
-
-                    <!-- SERVICE 4 -->
-
                     <article class="service-card">
 
                         <div class="service-icon orange-service">
 
-                            <i class="fa-solid fa-people-group"></i>
+                            <i aria-hidden="true" class="fa-solid fa-people-group"></i>
 
                         </div>
 
@@ -496,7 +418,7 @@
 
                             Learn More
 
-                            <i class="fa-solid fa-arrow-right"></i>
+                            <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                         </a>
 
@@ -508,37 +430,26 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 5 — FAMILY HEALTHCARE SECTION
-             ========================================================= -->
-
         <section class="family-section" id="family">
 
             <div class="container family-container">
-
-
-                <!-- -------------------------
-                     FAMILY IMAGE
-                     ------------------------- -->
 
                 <div class="family-image-container">
 
                     <div class="family-image-bg"></div>
 
-                    <img src="family-healthcare.png"
-                        alt="Family using HealthHome healthcare services"
-                        class="family-image">
+                    <picture>
+                        <source srcset="images/family-healthcare.webp" type="image/webp">
+                        <img src="images/family-healthcare.png"
+                            alt="A family pictured alongside HealthHome's family healthcare message"
+                            class="family-image"
+                            width="822"
+                            height="478"
+                            loading="lazy"
+                            decoding="async">
+                    </picture>
 
                 </div>
-
-
-
-                <!-- -------------------------
-                     FAMILY CONTENT
-                     ------------------------- -->
 
                 <div class="family-content">
 
@@ -546,14 +457,12 @@
                         FAMILY HEALTHCARE
                     </p>
 
-
                     <h2>
 
                         One App for Your
                         <span>Family's Healthcare.</span>
 
                     </h2>
-
 
                     <p>
 
@@ -564,12 +473,11 @@
 
                     </p>
 
-
                     <div class="family-features">
 
                         <div class="family-feature">
 
-                            <i class="fa-solid fa-check"></i>
+                            <i aria-hidden="true" class="fa-solid fa-check"></i>
 
                             <span>
                                 Easy access to healthcare services
@@ -577,10 +485,9 @@
 
                         </div>
 
-
                         <div class="family-feature">
 
-                            <i class="fa-solid fa-check"></i>
+                            <i aria-hidden="true" class="fa-solid fa-check"></i>
 
                             <span>
                                 Healthcare services in one platform
@@ -588,10 +495,9 @@
 
                         </div>
 
-
                         <div class="family-feature">
 
-                            <i class="fa-solid fa-check"></i>
+                            <i aria-hidden="true" class="fa-solid fa-check"></i>
 
                             <span>
                                 Designed for individuals and families
@@ -601,13 +507,12 @@
 
                     </div>
 
-
                     <a href="#download"
                         class="text-btn">
 
                         Explore HealthHome
 
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                     </a>
 
@@ -617,19 +522,9 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 6 — WHY HEALTHHOME
-             ========================================================= -->
-
         <section class="why-section" id="why-healthhome">
 
             <div class="container">
-
-
-                <!-- Heading -->
 
                 <div class="section-heading">
 
@@ -648,20 +543,13 @@
 
                 </div>
 
-
-
-                <!-- Why HealthHome Cards -->
-
                 <div class="why-grid">
-
-
-                    <!-- CARD 1 -->
 
                     <div class="why-card">
 
                         <div class="why-icon">
 
-                            <i class="fa-solid fa-house"></i>
+                            <i aria-hidden="true" class="fa-solid fa-house"></i>
 
                         </div>
 
@@ -676,15 +564,11 @@
 
                     </div>
 
-
-
-                    <!-- CARD 2 -->
-
                     <div class="why-card">
 
                         <div class="why-icon">
 
-                            <i class="fa-solid fa-people-roof"></i>
+                            <i aria-hidden="true" class="fa-solid fa-people-roof"></i>
 
                         </div>
 
@@ -699,15 +583,11 @@
 
                     </div>
 
-
-
-                    <!-- CARD 3 -->
-
                     <div class="why-card">
 
                         <div class="why-icon">
 
-                            <i class="fa-solid fa-circle-nodes"></i>
+                            <i aria-hidden="true" class="fa-solid fa-circle-nodes"></i>
 
                         </div>
 
@@ -722,15 +602,11 @@
 
                     </div>
 
-
-
-                    <!-- CARD 4 -->
-
                     <div class="why-card">
 
                         <div class="why-icon">
 
-                            <i class="fa-regular fa-comments"></i>
+                            <i aria-hidden="true" class="fa-regular fa-comments"></i>
 
                         </div>
 
@@ -751,19 +627,9 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 7 — HOW HEALTHHOME WORKS
-             ========================================================= -->
-
         <section class="how-section" id="how-it-works">
 
             <div class="container">
-
-
-                <!-- Heading -->
 
                 <div class="section-heading">
 
@@ -782,14 +648,7 @@
 
                 </div>
 
-
-
-                <!-- Steps -->
-
                 <div class="steps-container">
-
-
-                    <!-- STEP 1 -->
 
                     <div class="step-card">
 
@@ -799,7 +658,7 @@
 
                         <div class="step-icon">
 
-                            <i class="fa-solid fa-mobile-screen-button"></i>
+                            <i aria-hidden="true" class="fa-solid fa-mobile-screen-button"></i>
 
                         </div>
 
@@ -814,10 +673,6 @@
 
                     </div>
 
-
-
-                    <!-- STEP 2 -->
-
                     <div class="step-card">
 
                         <div class="step-number">
@@ -826,7 +681,7 @@
 
                         <div class="step-icon">
 
-                            <i class="fa-solid fa-user-plus"></i>
+                            <i aria-hidden="true" class="fa-solid fa-user-plus"></i>
 
                         </div>
 
@@ -841,10 +696,6 @@
 
                     </div>
 
-
-
-                    <!-- STEP 3 -->
-
                     <div class="step-card">
 
                         <div class="step-number">
@@ -853,7 +704,7 @@
 
                         <div class="step-icon">
 
-                            <i class="fa-solid fa-list-check"></i>
+                            <i aria-hidden="true" class="fa-solid fa-list-check"></i>
 
                         </div>
 
@@ -868,10 +719,6 @@
 
                     </div>
 
-
-
-                    <!-- STEP 4 -->
-
                     <div class="step-card">
 
                         <div class="step-number">
@@ -880,7 +727,7 @@
 
                         <div class="step-icon">
 
-                            <i class="fa-solid fa-heart-pulse"></i>
+                            <i aria-hidden="true" class="fa-solid fa-heart-pulse"></i>
 
                         </div>
 
@@ -901,26 +748,15 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 8 — DOWNLOAD APP SECTION
-             ========================================================= -->
-
         <section class="download-section" id="download">
 
             <div class="container download-container">
 
-
-                <!-- Download Content -->
-
                 <div class="download-content">
 
                     <p class="section-label">
-                        DOWNLOAD HEALTHHOME
+                        EXPLORE THE HEALTHHOME APP
                     </p>
-
 
                     <h2>
 
@@ -930,7 +766,6 @@
                         <span>In One App.</span>
 
                     </h2>
-
 
                     <p>
 
@@ -943,23 +778,20 @@
 
                     </p>
 
-
-                    <a href="#"
+                    <a href="mailto:healthhome2003@gmail.com?subject=HealthHome%20app%20link"
                         class="google-play-btn"
-                        id="googlePlayButton"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                        aria-label="Email HealthHome to request the app link">
 
-                        <i class="fa-brands fa-google-play"></i>
+                            <i aria-hidden="true" class="fa-solid fa-envelope"></i>
 
                         <div>
 
                             <small>
-                                GET IT ON
+                                REQUEST THE APP LINK
                             </small>
 
                             <strong>
-                                Google Play
+                                Contact HealthHome
                             </strong>
 
                         </div>
@@ -968,15 +800,18 @@
 
                 </div>
 
-
-
-                <!-- Download Image -->
-
                 <div class="download-image-container">
 
-                    <img src="app-screens.png"
-                        alt="HealthHome App Screens"
-                        class="download-app-image">
+                    <picture>
+                        <source srcset="images/app-screens.webp" type="image/webp">
+                        <img src="images/app-screens.png"
+                            alt="Preview of HealthHome app screens for doctors, medicines, lab tests and family members"
+                            class="download-app-image"
+                            width="822"
+                            height="479"
+                            loading="lazy"
+                            decoding="async">
+                    </picture>
 
                 </div>
 
@@ -984,19 +819,9 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 9 — ABOUT US
-             ========================================================= -->
-
         <section class="about-section" id="about">
 
             <div class="container">
-
-
-                <!-- About Heading -->
 
                 <div class="about-header">
 
@@ -1004,12 +829,10 @@
                         ABOUT US
                     </p>
 
-
                     <h2>
                         Making Healthcare
                         <span>Simpler for Everyone.</span>
                     </h2>
-
 
                     <p>
 
@@ -1020,12 +843,6 @@
                     </p>
 
                 </div>
-
-
-
-                <!-- -------------------------
-                     OUR VISION
-                     ------------------------- -->
 
                 <div class="about-vision">
 
@@ -1051,12 +868,11 @@
 
                     </div>
 
-
                     <div class="vision-card">
 
                         <div class="vision-icon">
 
-                            <i class="fa-solid fa-heart-pulse"></i>
+                            <i aria-hidden="true" class="fa-solid fa-heart-pulse"></i>
 
                         </div>
 
@@ -1076,12 +892,6 @@
 
                 </div>
 
-
-
-                <!-- -------------------------
-                     WHAT WE ARE BUILDING
-                     ------------------------- -->
-
                 <div class="building-section">
 
                     <div class="subsection-heading">
@@ -1096,17 +906,13 @@
 
                     </div>
 
-
                     <div class="building-grid">
-
-
-                        <!-- Doctors -->
 
                         <div class="building-card">
 
                             <div class="building-icon">
 
-                                <i class="fa-solid fa-user-doctor"></i>
+                                <i aria-hidden="true" class="fa-solid fa-user-doctor"></i>
 
                             </div>
 
@@ -1121,15 +927,11 @@
 
                         </div>
 
-
-
-                        <!-- Pharmacies -->
-
                         <div class="building-card">
 
                             <div class="building-icon">
 
-                                <i class="fa-solid fa-pills"></i>
+                                <i aria-hidden="true" class="fa-solid fa-pills"></i>
 
                             </div>
 
@@ -1144,15 +946,11 @@
 
                         </div>
 
-
-
-                        <!-- Laboratories -->
-
                         <div class="building-card">
 
                             <div class="building-icon">
 
-                                <i class="fa-solid fa-flask"></i>
+                                <i aria-hidden="true" class="fa-solid fa-flask"></i>
 
                             </div>
 
@@ -1167,15 +965,11 @@
 
                         </div>
 
-
-
-                        <!-- Families -->
-
                         <div class="building-card">
 
                             <div class="building-icon">
 
-                                <i class="fa-solid fa-people-group"></i>
+                                <i aria-hidden="true" class="fa-solid fa-people-group"></i>
 
                             </div>
 
@@ -1194,12 +988,6 @@
 
                 </div>
 
-
-
-                <!-- -------------------------
-                     OUR APPROACH
-                     ------------------------- -->
-
                 <div class="approach-section">
 
                     <div class="subsection-heading">
@@ -1214,13 +1002,11 @@
 
                     </div>
 
-
                     <div class="approach-grid">
-
 
                         <div class="approach-card">
 
-                            <i class="fa-solid fa-user"></i>
+                            <i aria-hidden="true" class="fa-solid fa-user"></i>
 
                             <div>
 
@@ -1237,11 +1023,9 @@
 
                         </div>
 
-
-
                         <div class="approach-card">
 
-                            <i class="fa-solid fa-circle-nodes"></i>
+                            <i aria-hidden="true" class="fa-solid fa-circle-nodes"></i>
 
                             <div>
 
@@ -1258,11 +1042,9 @@
 
                         </div>
 
-
-
                         <div class="approach-card">
 
-                            <i class="fa-solid fa-people-group"></i>
+                            <i aria-hidden="true" class="fa-solid fa-people-group"></i>
 
                             <div>
 
@@ -1287,19 +1069,9 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 10 — CONTACT US
-             ========================================================= -->
-
         <section class="contact-section" id="contact">
 
             <div class="container">
-
-
-                <!-- Contact Heading -->
 
                 <div class="section-heading">
 
@@ -1319,25 +1091,15 @@
 
                 </div>
 
-
-
                 <div class="contact-container">
 
-
-                    <!-- -------------------------
-                         CONTACT INFORMATION
-                         ------------------------- -->
-
                     <div class="contact-info">
-
-
-                        <!-- Email -->
 
                         <div class="contact-item">
 
                             <div class="contact-icon">
 
-                                <i class="fa-solid fa-envelope"></i>
+                                <i aria-hidden="true" class="fa-solid fa-envelope"></i>
 
                             </div>
 
@@ -1348,22 +1110,18 @@
                                 </h4>
 
                                 <a href="mailto:healthhome2003@gmail.com">
-                                   healthhome2003@gmail.com
+                                    healthhome2003@gmail.com
                                 </a>
 
                             </div>
 
                         </div>
 
-
-
-                        <!-- Phone -->
-
                         <div class="contact-item">
 
                             <div class="contact-icon">
 
-                                <i class="fa-solid fa-phone"></i>
+                                <i aria-hidden="true" class="fa-solid fa-phone"></i>
 
                             </div>
 
@@ -1381,15 +1139,11 @@
 
                         </div>
 
-
-
-                        <!-- Location -->
-
                         <div class="contact-item">
 
                             <div class="contact-icon">
 
-                                <i class="fa-solid fa-location-dot"></i>
+                                <i aria-hidden="true" class="fa-solid fa-location-dot"></i>
 
                             </div>
 
@@ -1407,22 +1161,15 @@
 
                         </div>
 
-
                     </div>
-
-
-
-                    <!-- -------------------------
-                         CONTACT FORM
-                         ------------------------- -->
 
                     <div class="contact-form-container">
 
                         <form id="contactForm"
-                            class="contact-form">
-
-
-                            <!-- Name -->
+                            class="contact-form"
+                            action="mailto:healthhome2003@gmail.com"
+                            method="post"
+                            enctype="text/plain">
 
                             <div class="form-group">
 
@@ -1434,13 +1181,11 @@
                                     id="name"
                                     name="name"
                                     placeholder="Enter your name"
+                                    autocomplete="name"
+                                    maxlength="100"
                                     required>
 
                             </div>
-
-
-
-                            <!-- Email -->
 
                             <div class="form-group">
 
@@ -1452,13 +1197,11 @@
                                     id="email"
                                     name="email"
                                     placeholder="Enter your email address"
+                                    autocomplete="email"
+                                    maxlength="254"
                                     required>
 
                             </div>
-
-
-
-                            <!-- Phone -->
 
                             <div class="form-group">
 
@@ -1469,13 +1212,11 @@
                                 <input type="tel"
                                     id="phone"
                                     name="phone"
-                                    placeholder="Enter your phone number">
+                                    placeholder="Enter your phone number"
+                                    autocomplete="tel"
+                                    maxlength="32">
 
                             </div>
-
-
-
-                            <!-- Message -->
 
                             <div class="form-group">
 
@@ -1487,30 +1228,31 @@
                                     name="message"
                                     rows="5"
                                     placeholder="How can we help you?"
+                                    maxlength="2000"
                                     required></textarea>
 
                             </div>
-
-
-
-                            <!-- Submit -->
 
                             <button type="submit"
                                 class="submit-btn">
 
                                 <span>
-                                    Send Message
+                                    Continue to email
                                 </span>
 
-                                <i class="fa-solid fa-paper-plane"></i>
+                                <i aria-hidden="true" class="fa-solid fa-paper-plane"></i>
 
                             </button>
 
-
-                            <!-- Form status message -->
-
                             <p id="formMessage"
-                                class="form-message">
+                                class="form-message"
+                                role="status"
+                                aria-live="polite"
+                                aria-atomic="true">
+                            </p>
+
+                            <p class="contact-form-note">
+                                Your email app will open so you can review and send your message. Please do not include urgent or highly sensitive health information.
                             </p>
 
                         </form>
@@ -1523,17 +1265,9 @@
 
         </section>
 
-
-
-
-        <!-- =========================================================
-             PART 11 — FINAL CALL TO ACTION
-             ========================================================= -->
-
         <section class="final-cta">
 
             <div class="container final-cta-container">
-
 
                 <div class="final-cta-content">
 
@@ -1541,37 +1275,31 @@
                         START YOUR HEALTHCARE JOURNEY
                     </p>
 
-
                     <h2>
                         Your Healthcare,
                         <span>All in One App.</span>
                     </h2>
 
-
                     <p>
 
-                        Download HealthHome and explore
-                        a simpler way to manage your
-                        healthcare needs.
+                        Contact us to request the current HealthHome app link and learn more about the platform.
 
                     </p>
-
 
                     <a href="#download"
                         class="primary-btn">
 
-                        Download HealthHome
+                        Request the app link
 
-                        <i class="fa-solid fa-arrow-right"></i>
+                        <i aria-hidden="true" class="fa-solid fa-arrow-right"></i>
 
                     </a>
 
                 </div>
 
-
                 <div class="final-cta-icon">
 
-                    <i class="fa-solid fa-house-medical"></i>
+                    <i aria-hidden="true" class="fa-solid fa-house-medical"></i>
 
                 </div>
 
@@ -1581,41 +1309,32 @@
 
     </main>
 
-
-
-
-    <!-- =========================================================
-         PART 12 — FOOTER
-         ========================================================= -->
-
     <footer class="footer">
 
         <div class="container">
 
-
-            <!-- -------------------------
-                 FOOTER TOP
-                 ------------------------- -->
-
             <div class="footer-top">
-
-
-                <!-- Brand -->
 
                 <div class="footer-brand">
 
                     <a href="#home"
                         class="footer-logo">
 
-                        <img src="healthhome.png"
-                            alt="HealthHome Logo">
+                        <picture>
+                            <source srcset="images/healthhome.webp" type="image/webp">
+                            <img src="images/healthhome.png"
+                                alt=""
+                                width="256"
+                                height="256"
+                                loading="lazy"
+                                decoding="async">
+                        </picture>
 
                         <span>
                             Health<span>Home</span>
                         </span>
 
                     </a>
-
 
                     <p>
 
@@ -1625,10 +1344,6 @@
                     </p>
 
                 </div>
-
-
-
-                <!-- Quick Links -->
 
                 <div class="footer-column">
 
@@ -1654,10 +1369,6 @@
 
                 </div>
 
-
-
-                <!-- Services -->
-
                 <div class="footer-column">
 
                     <h4>
@@ -1682,33 +1393,21 @@
 
                 </div>
 
-
-
-                <!-- Download -->
-
                 <div class="footer-column footer-download">
 
                     <h4>
                         Get HealthHome
                     </h4>
 
-                    <p>
-                        Download the app and
-                        explore HealthHome.
-                    </p>
+                    <p>Contact us to request the current HealthHome app link.</p>
 
-
-                    <a href="#"
-                        id="footerGooglePlay"
+                    <a href="mailto:healthhome2003@gmail.com?subject=HealthHome%20app%20link"
                         class="footer-play-btn"
-                        target="_blank"
-                        rel="noopener noreferrer">
+                        aria-label="Email HealthHome to request the app link">
 
-                        <i class="fa-brands fa-google-play"></i>
+                            <i class="fa-solid fa-envelope" aria-hidden="true"></i>
 
-                        <span>
-                            Google Play
-                        </span>
+                        <span>Request app link</span>
 
                     </a>
 
@@ -1716,29 +1415,21 @@
 
             </div>
 
-
-
-            <!-- -------------------------
-                 FOOTER BOTTOM
-                 ------------------------- -->
-
             <div class="footer-bottom">
-
 
                 <p>
                     © <span id="currentYear"></span>
                     HealthHome. All rights reserved.
                 </p>
 
-
                 <div class="footer-bottom-links">
 
-                    <a href="#">
-                        Privacy Policy
+                    <a href="mailto:healthhome2003@gmail.com?subject=Privacy%20enquiry">
+                        Privacy Enquiries
                     </a>
 
-                    <a href="#">
-                        Terms & Conditions
+                    <a href="mailto:healthhome2003@gmail.com?subject=Terms%20enquiry">
+                        Terms Enquiries
                     </a>
 
                 </div>
@@ -1749,39 +1440,7 @@
 
     </footer>
 
-
-
-
-    <!-- =========================================================
-         PART 13 — EMAILJS + JAVASCRIPT
-         ========================================================= -->
-
-    <!-- EmailJS Browser SDK -->
-    <script
-        type="text/javascript"
-        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
-    </script>
-
-
-    <!-- =========================================================
-         EMAILJS INITIALIZATION
-         ========================================================= -->
-
-    <script>
-
-        emailjs.init({
-            publicKey: "CPgfP2bQ9nXndHcc6"
-        });
-
-    </script>
-
-
-    <!-- =========================================================
-         HEALTHHOME WEBSITE JAVASCRIPT
-         ========================================================= -->
-
     <script src="script.js"></script>
-
 
 </body>
 

@@ -23,19 +23,23 @@ html {
     scroll-behavior: smooth;
 }
 
+section[id] {
+    scroll-margin-top: 88px;
+}
+
 
 /* Main website variables */
 
 :root {
 
     /* Brand Colors */
-    --primary: #00C2CB;
-    --primary-dark: #009FA8;
+    --primary: #00838B;
+    --primary-dark: #007179;
     --secondary: #0879D9;
     --secondary-dark: #075FA8;
 
     /* Logo / healthcare colors */
-    --green: #24B47E;
+    --green: #087C58;
     --green-light: #E8FAF3;
 
     --blue-light: #EAF7FF;
@@ -94,6 +98,14 @@ body {
 img {
     max-width: 100%;
     display: block;
+}
+
+.logo > picture,
+.footer-logo > picture,
+.hero-image-container > picture,
+.family-image-container > picture,
+.download-image-container > picture {
+    display: contents;
 }
 
 
@@ -1172,37 +1184,54 @@ section {
    ========================================================= */
 
 .family-section {
+
     padding: 100px 0;
+
     background: var(--section-light);
+
 }
 
 
 /* Family container */
 
 .family-container {
+
     display: grid;
+
     grid-template-columns: 1fr 1fr;
+
     align-items: center;
+
     gap: 75px;
+
 }
 
 
-/* Family image container */
+/* Family image */
 
 .family-image-container {
+
     position: relative;
-    min-height: auto;
+
+    min-height: 430px;
+
     display: flex;
+
     align-items: center;
+
     justify-content: center;
+
 }
 
 
 /* Background decoration */
 
 .family-image-bg {
+
     position: absolute;
+
     width: 80%;
+
     height: 80%;
 
     background: linear-gradient(
@@ -1212,138 +1241,172 @@ section {
     );
 
     border-radius: 40% 60% 55% 45%;
+
     transform: rotate(-5deg);
+
 }
 
 
-/* =========================================================
-   FAMILY IMAGE — COMPLETE IMAGE / NO CROPPING
-   ========================================================= */
+/* Family image */
 
 .family-image {
+
     position: relative;
+
     z-index: 2;
 
     width: 88%;
-    max-width: 100%;
 
-    /*
-       IMPORTANT:
-       Do NOT use a fixed height.
-       The original image ratio will be preserved.
-    */
-    height: auto;
+    height: 400px;
 
-    /*
-       Show the complete image instead of cropping it.
-    */
-    object-fit: contain;
-
-    display: block;
+    object-fit: cover;
 
     border-radius: 30px;
+
     box-shadow: var(--shadow-medium);
+
 }
 
 
 /* Family content */
 
 .family-content {
+
     max-width: 550px;
+
 }
 
 
 /* Family title */
 
 .family-content h2 {
+
     color: var(--dark);
+
     font-size: clamp(32px, 4vw, 46px);
+
     line-height: 1.15;
+
     font-weight: 800;
+
     margin-bottom: 20px;
+
 }
 
 
 .family-content h2 span {
+
     color: var(--primary-dark);
+
 }
 
 
 /* Family paragraph */
 
 .family-content > p:not(.section-label) {
+
     color: var(--text-light);
+
     font-size: 15px;
+
     line-height: 1.8;
+
     margin-bottom: 25px;
+
 }
 
 
 /* Family features */
 
 .family-features {
+
     display: flex;
+
     flex-direction: column;
+
     gap: 13px;
+
     margin-bottom: 28px;
+
 }
 
 
 /* Family feature */
 
 .family-feature {
+
     display: flex;
+
     align-items: center;
+
     gap: 12px;
 
     color: var(--dark-blue);
 
     font-size: 13px;
+
     font-weight: 500;
+
 }
 
 
 /* Feature check */
 
 .family-feature i {
+
     width: 24px;
+
     height: 24px;
 
     border-radius: 50%;
 
     display: flex;
+
     align-items: center;
+
     justify-content: center;
 
     background: var(--green-light);
+
     color: var(--green);
 
     font-size: 11px;
+
 }
 
 
 /* Text button */
 
 .text-btn {
+
     display: inline-flex;
+
     align-items: center;
+
     gap: 8px;
 
     color: var(--primary-dark);
 
     font-size: 13px;
+
     font-weight: 700;
+
 }
 
 
 .text-btn i {
+
     transition: transform 0.3s ease;
+
 }
 
 
 .text-btn:hover i {
+
     transform: translateX(5px);
+
 }
+
 
 /* =========================================================
    PART 7 — WHY HEALTHHOME
@@ -2458,6 +2521,17 @@ section {
 
 }
 
+.contact-form-note {
+    margin-top: -4px;
+    color: var(--text-light);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.form-message.is-error {
+    color: #B42318;
+}
+
 
 /* =========================================================
    PART 12 — FINAL CALL TO ACTION
@@ -2840,14 +2914,14 @@ section {
    to these elements.
 */
 
-.service-card,
-.why-card,
-.step-card,
-.building-card,
-.approach-card,
-.contact-item,
-.family-content,
-.family-image-container {
+body.has-reveal .service-card,
+body.has-reveal .why-card,
+body.has-reveal .step-card,
+body.has-reveal .building-card,
+body.has-reveal .approach-card,
+body.has-reveal .contact-item,
+body.has-reveal .family-content,
+body.has-reveal .family-image-container {
 
     opacity: 0;
 
@@ -2856,6 +2930,8 @@ section {
     transition:
         opacity 0.7s ease,
         transform 0.7s ease;
+
+    transition-delay: var(--reveal-delay, 0ms);
 
 }
 
@@ -3264,178 +3340,58 @@ section {
     }
 
 
-/* =====================================================
-   MOBILE FAMILY — COMPLETE IMAGE
-   ===================================================== */
+    /* =====================================================
+       MOBILE FAMILY
+       ===================================================== */
 
-.family-section {
-    padding: 75px 0;
-}
+    .family-section {
 
+        padding: 75px 0;
 
-.family-container {
-    grid-template-columns: 1fr;
-    gap: 45px;
+    }
 
-    width: 90%;
-    max-width: 100%;
 
-    margin: 0 auto;
-}
+    .family-container {
 
+        grid-template-columns: 1fr;
 
-/* Family image container */
+        gap: 45px;
 
-.family-image-container {
-    position: relative;
+    }
 
-    width: 100%;
-    min-height: auto;
-    height: auto;
 
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    .family-image-container {
 
-    overflow: visible;
-}
+        min-height: 330px;
 
+    }
 
-/* Decorative background */
 
-.family-image-bg {
-    position: absolute;
+    .family-image {
 
-    width: 85%;
-    height: 85%;
+        height: 320px;
 
-    z-index: 0;
-}
+        width: 90%;
 
+    }
 
-/* =====================================================
-   FAMILY IMAGE — NO CROPPING ON MOBILE
-   ===================================================== */
 
-.family-image {
-    position: relative;
-    z-index: 2;
+    .family-content {
 
-    width: 100%;
-    max-width: 100%;
+        text-align: center;
 
-    height: auto;
+    }
 
-    object-fit: contain;
 
-    display: block;
+    .family-features {
 
-    border-radius: 25px;
+        align-items: flex-start;
 
-    box-shadow: var(--shadow-medium);
-}
+        display: inline-flex;
 
+        text-align: left;
 
-/* Family content */
-
-.family-content {
-    width: 100%;
-    max-width: 100%;
-
-    text-align: center;
-}
-
-
-.family-content h2 {
-    font-size: 32px;
-    line-height: 1.2;
-}
-
-
-.family-content > p:not(.section-label) {
-    font-size: 14px;
-    line-height: 1.7;
-}
-
-
-/* Family features */
-
-.family-features {
-    align-items: flex-start;
-    display: inline-flex;
-    text-align: left;
-}
-
-/* =====================================================
-   FAMILY IMAGE — SHOW COMPLETE IMAGE
-   ===================================================== */
-
-.family-image {
-    position: relative;
-    z-index: 2;
-
-    width: 88%;
-    max-width: 100%;
-
-    /* IMPORTANT: don't force a fixed height */
-    height: auto;
-
-    /* Show the complete image */
-    object-fit: contain;
-
-    display: block;
-
-    border-radius: 30px;
-    box-shadow: var(--shadow-medium);
-}
-
-
-/* Family content */
-
-.family-content {
-
-    width: 100%;
-
-    max-width: 100%;
-
-    text-align: center;
-
-}
-
-
-.family-content h2 {
-
-    font-size: 32px;
-
-    line-height: 1.2;
-
-}
-
-
-.family-content > p:not(.section-label) {
-
-    font-size: 14px;
-
-    line-height: 1.7;
-
-}
-
-
-/* Family features */
-
-.family-features {
-
-    align-items: flex-start;
-
-    display: inline-flex;
-
-    text-align: left;
-
-}
-
-
-
-   
+    }
 
 
     /* =====================================================
@@ -3858,16 +3814,40 @@ button:focus-visible,
 input:focus-visible,
 textarea:focus-visible {
 
-    outline: 3px solid rgba(0, 194, 203, 0.35);
+    outline: 3px solid var(--primary-dark);
 
     outline-offset: 3px;
 
 }
 
 
-/* =========================================================
-   PART 19 — REDUCED MOTION
-   ========================================================= */
+/* Keyboard navigation helpers */
+
+.skip-link {
+    position: fixed;
+    top: 12px;
+    left: 12px;
+    z-index: 2000;
+    padding: 10px 14px;
+    border-radius: 8px;
+    background: var(--dark);
+    color: var(--white);
+    font-weight: 700;
+    transform: translateY(-160%);
+}
+
+.skip-link:focus {
+    transform: translateY(0);
+}
+
+@media (max-width: 768px) {
+    section[id] {
+        scroll-margin-top: 80px;
+    }
+}
+
+
+/* Reduced motion */
 
 @media (prefers-reduced-motion: reduce) {
 
@@ -3890,129 +3870,4 @@ textarea:focus-visible {
 
     }
 
-}
-
-/* =========================================================
-   PART 20 — FINAL RESPONSIVE IMAGE FIX
-   ========================================================= */
-
-html,
-body {
-    width: 100%;
-    max-width: 100%;
-    overflow-x: hidden;
-}
-
-
-/* Prevent containers from creating horizontal overflow */
-
-.hero-container,
-.family-container,
-.download-container,
-.contact-container,
-.final-cta-container {
-    min-width: 0;
-    max-width: 100%;
-}
-
-
-/* All images remain inside their container */
-
-img {
-    max-width: 100%;
-    height: auto;
-}
-
-
-/* =========================================================
-   FAMILY IMAGE — DESKTOP
-   ========================================================= */
-
-.family-image {
-    width: 88%;
-    max-width: 100%;
-    height: auto;
-
-    object-fit: contain;
-
-    display: block;
-}
-
-
-/* =========================================================
-   FAMILY IMAGE — TABLET
-   ========================================================= */
-
-@media (max-width: 1000px) {
-
-    .family-image-container {
-        width: 100%;
-        min-height: auto;
-        height: auto;
-    }
-
-    .family-image {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-
-        object-fit: contain;
-    }
-}
-
-
-/* =========================================================
-   FAMILY IMAGE — MOBILE
-   ========================================================= */
-
-@media (max-width: 768px) {
-
-    .family-image-container {
-        width: 100%;
-        min-height: auto;
-        height: auto;
-
-        overflow: visible;
-    }
-
-    .family-image {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-
-        object-fit: contain;
-
-        border-radius: 25px;
-    }
-}
-
-
-/* =========================================================
-   FAMILY IMAGE — SMALL PHONES
-   ========================================================= */
-
-@media (max-width: 480px) {
-
-    .family-image-container {
-        width: 100%;
-        min-height: auto;
-        height: auto;
-
-        padding: 0;
-    }
-
-    .family-image {
-        width: 100%;
-        max-width: 100%;
-        height: auto;
-
-        object-fit: contain;
-
-        border-radius: 22px;
-    }
-
-    .family-image-bg {
-        width: 80%;
-        height: 80%;
-    }
 }
