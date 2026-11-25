@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://healthhome.in/sitemap.xml
+Sitemap: https://www.healthhome.in/sitemap.xml
